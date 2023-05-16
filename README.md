@@ -145,7 +145,7 @@ Will write this up later...
 
 Paul Edwards - paul.edwards@ufl.edu
 
-Project Link: [https://github.com/paul-edwards-UF/Lab-Dash](https://github.com/paul-edwards-UF/moku-python)
+Project Link: [https://github.com/paul-edwards-UF/moku-python](https://github.com/paul-edwards-UF/moku-python)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
