@@ -55,6 +55,11 @@ _With Anaconda (recommended):_
   
  ### Moku Setup
  
+ Installing Bonjour Libraries
+To automatically discover Moku:Lab on your network (i.e. by name or serial) you must have Bonjour installed. Without Bonjour, your Moku:Lab will still be accessible by IP address, you just won't be able to automatically connect by name or serial number, or find it using moku list. To install Bonjour:
+
+Windows install the <a href='https://support.apple.com/kb/DL999?locale=en_US'>Bonjour Printer Services</a>. 
+
   - Ethernet-wire the Moku to PC or local network.
   - Update your Moku:Lab with the latest firmware by typing the following in your terminal
 
@@ -65,6 +70,7 @@ The serial number is the middle six digits found on the underside of the Moku:La
 You can also update the Moku:Lab using its IP address with
 
     moku --ip=192.168.0.1 update install
+
 
 The IP address of your Moku:Lab device can be found with
 
