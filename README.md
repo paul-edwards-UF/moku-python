@@ -88,7 +88,7 @@ i=m.discover_instrument()
 Run the python script with:
 
  ```
- python remote_acquire_moku_full_ds.py <arg1> <arg2> <optional arg3> <optional arg4> <optional arg5>
+ python remote_acquire_moku_full_ds.py <arg1> <arg2> <optional arg3> <optional arg4>
  ```
  
  The arguments here are:
