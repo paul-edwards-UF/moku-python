@@ -60,6 +60,7 @@ To automatically discover Moku:Lab on your network (i.e. by name or serial) you 
 
 Windows install the <a href='https://support.apple.com/kb/DL999?locale=en_US'>Bonjour Printer Services</a>. 
 
+#### Interfacing with a Moku
   - Ethernet-wire the Moku to PC or local network.
   - Update your Moku:Lab with the latest firmware by typing the following in your terminal
 
