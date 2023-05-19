@@ -124,9 +124,13 @@ Again, you can write your own following the ```pymoku``` documentation.
 ## Data Logging
 Will write this up later...
 
-- Data is logged to a CSV by date, and in two files (one at 30Hz sample rate, and one decimated as "ReducedPhasemeterData" - example included):
+- Data is logged to a CSV by date
 
 ```writepath = os.path.join(genpath,date)```
+
+- Two files are output: one at 30Hz sample rate, and one decimated as "ReducedPhasemeterData" by:
+ 
+```signal.decimate(np.reshape(ch1_samples[:,1], (len(ch1_samples),1)), q = 8, n=2, ftype = 'iir')```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
