@@ -5,6 +5,10 @@
 
   <p align="center">
     Python script for Moku phasemeter readout and data logging.
+  </p>
+  <p align="center">
+    <b>NOTE: This is now "legacy" code, only for hardware versions (HW) &leq; 511. Script being migrated to Moku 3.0, FW&geq;580.</b>
+  </p>
     <!--
     <br />
     <a href=""><strong>Explore the docs »</strong></a>
@@ -81,8 +85,8 @@ The IP address of your Moku:Lab device can be found with
 
   - Use the IP address in the argument ```Moku(<address>)``` of the remote_acquire_moku_full_ds.py script. For us, these addresses were hard-coded and simply commented/uncommented when users wanted to switch Mokus:
 ```
-# m = Moku('10.244.25.46') #-- Initialise connection to Moku. Blue moku 000661
-m = Moku('10.244.25.34') #-- Black moku 000311
+# m = Moku('10.244.xx.xx') #-- Connect to Moku x
+m = Moku('10.244.yy.yy') #-- Connect to Moku y
 i=m.discover_instrument()
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -113,8 +117,6 @@ m.take_ownership()
 #-- Setting up PM parameters.
 i.set_samplerate('veryslow') #-- PM sampling rate for data acquisition
 fs = 30.5176
-# i.set_samplerate('fast') #-- PM sampling rate for data acquisition
-# fs = 500
 i.set_bandwidth(1, 10000) 
 i.set_frontend(1, fiftyr=True, atten = False, ac = True)
 i.set_initfreq(1,10e6)
