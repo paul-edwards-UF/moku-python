@@ -7,7 +7,8 @@
     Python script for Moku phasemeter readout and data logging.
   </p>
   <p align="center">
-    <b>NOTE: This is now "legacy" code, only for hardware versions (HW) &leq; 511. Script being migrated to Moku 3.0, FW&geq;580.</b>
+    <b>NOTE: This is now "legacy" code, only for hardware versions (HW) &leq; 511.<br>
+      Script being migrated to Moku 3.0, FW&geq;580.</b>
   </p>
     <!--
     <br />
