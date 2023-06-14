@@ -1,3 +1,11 @@
+################################################
+# Moku:Lab Remote Phasemeter DAQ with Python (pymoku v2.8.3)
+############################################### 
+'''
+NOTE: This is now "legacy" code, only for FW<=511.
+Use IPv4 address to run Moku:Lab phasemeter.
+'''
+
 from pymoku import *
 import pymoku.instruments as inst
 import numpy as np
@@ -18,12 +26,7 @@ To execute the file: python remote_acquire_moku.py 'duration (secs)' 'info strin
 
 '''
 
-
-
-# m = Moku('10.244.25.46') #-- Initialise connection to Moku. Blue moku 000661
-m = Moku('10.244.25.34') #-- Black moku 000311
-# m = Moku('10.244.25.47')
-# m = Moku('10.244.25.45') #-- Red Moku
+m = Moku('10.244.xx.xx') #-- connect to moku (fill in IPv4 here)
 
 i=m.discover_instrument()
 i = inst.Phasemeter()
@@ -33,8 +36,7 @@ m.take_ownership()
 #-- Setting up PM parameters.
 i.set_samplerate('veryslow') #-- PM sampling rate for data acquisition
 fs = 30.5176
-# i.set_samplerate('fast') #-- PM sampling rate for data acquisition
-# fs = 500
+
 i.set_bandwidth(1, 10000) 
 i.set_frontend(1, fiftyr=True, atten = False, ac = True)
 i.set_initfreq(1,10e6)
@@ -44,12 +46,6 @@ i.set_bandwidth(2, 10000)
 i.set_frontend(2, fiftyr=True, atten = False, ac = True)
 i.set_initfreq(2,10e6)
 
-
-# i.gen_sinewave(ch = 1, amplitude =  1, frequency = 10000000, phase =  0, phase_locked = False)
-# i.gen_sinewave(2, 1, 15000000, 90, False)
-
-# i.reacquire(ch=1) #-- Reacquires the PM data loop with these new settings. Don't need this with auto acquire
-# i.auto_acquire(ch =1) #-- Set the frequency acquisition to auto as we can't set a fixed frequency due to the laser drift. Also, we aren't using phase but the frequency.
 i.auto_acquire()
 
 genpath = r'P:\ResLabs\LISAscope\physics-svc-lisascope\data'
@@ -76,17 +72,7 @@ elif len(sys.argv)>=4:
     i.auto_acquire(ch = 1)
     i.auto_acquire(ch = 2)
     print('Two channel engaged')
-    # if len(sys.argv)>=4: 
-    #     i.set_initfreq(2, int(sys.argv[4])) 
-    #     i.reacquire(ch = 2)
-    #     print(int(sys.argv[4]))
-    #     print('channel 1 frequeny:', i.get_initfreq(1))
-    #     print('channel 2 frequeny:', i.get_initfreq(2))
 
-    
-# elif len(sys.argv) == 5:
-#     i.set_initfreq(2, int(sys.argv[4]))
-    # print('channel two frequency set to',int(sys.argv[4]))
 
 # #-- Logging data to SD card
 # try:
